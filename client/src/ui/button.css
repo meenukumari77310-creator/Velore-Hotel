@@ -1,0 +1,14 @@
+.ui_button{
+    width: 100%;
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background: rgb(33, 33, 240);;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s;
+}
+.ui_button:active{
+    background-color: rgb(116, 116, 212);
+}

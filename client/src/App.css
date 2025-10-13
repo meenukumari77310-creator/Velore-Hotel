@@ -1,0 +1,810 @@
+/* Optional glow effect on hover */
+.nav-link:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #fff !important;
+}
+
+/* Smooth transitions */
+.nav-link,
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+  transition: none !important;
+}
+
+main.flex-fill {
+  min-height: calc(100vh - 160px); /* Adjust for navbar + footer height */
+  transition: none !important;
+}
+
+
+/* Optional: blur effect class */
+.backdrop-blur {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Mobile search spacing */
+@media (max-width: 991px) {
+  form[role="search"] {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+
+
+.dish-img {
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-img {
+  transform: scale(1.05);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn {
+  font-size: 1.25rem;
+  padding: 0.75rem 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: white;
+  color: #dc3545;
+}
+
+
+/* About.css */
+.about-section h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #dc3545; /* Bootstrap danger color */
+}
+
+.about-section .card {
+  transition: transform 0.3s ease;
+}
+
+.about-section .card:hover {
+  transform: scale(1.05);
+}
+
+
+.dish-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.dish-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+.dish-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #dc3545;
+  text-transform: capitalize;
+}
+
+.price-badge {
+  font-weight: 700;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+}
+
+
+.contact-heading {
+  font-family: 'Poppins', sans-serif;
+  color: #198754;
+}
+
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+.contact-info-icon {
+  color: #198754;
+  margin-right: 8px;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+}
+
+
+
+.link-hover:hover {
+  color: #ff4d4f;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #dc3545;
+  transform: scale(1.2);
+}
+
+/* Ensure full height layout with sticky footer */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.flex-fill {
+  flex: 1;
+}
+
+/* Remove default spacing from footer */
+footer {
+  margin: 0;
+  padding: 20px 0;
+  background: #1f1617;
+  color: white;
+}
+/* Add to App.css or global CSS */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.icon-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.icon-box {
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-box:hover {
+  transform: scale(1.1);
+  background-color: #f8f9fa;
+}
+
+.page-content {
+  padding-top: 80px; /* or more, depending on navbar height */
+}
+
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1050;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-modal {
+  background: white;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+}
+
+.custom-modal img {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  background: none;
+  border: none;
+}
+.dish-cards {
+  border: 2px solid transparent; /* default invisible border to prevent layout shift */
+}
+
+.dish-cards:hover {
+  border: 2px solid #e63946; /* red border on hover */
+}
+
+.price-badge {
+  display: inline-block;
+  background: #198754;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.price-badge:hover {
+  background: #157347;
+}
+
+
+
+/* AdminLayout.css */
+.sidebar .nav-link.active {
+  background-color: #495057;
+  border-radius: 5px;
+}   
+
+/* Admin Dashboard Layout */
+.admin-dashboard {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent body scrolling */
+}
+
+.sidebar {
+  width: 250px; /* Adjust width */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Scroll only sidebar if content overflows */
+  flex-shrink: 0; /* Prevent shrinking */
+  position: relative; /* Keep sidebar in place */
+}
+
+.main-content {
+  flex: 1; /* Fill remaining space */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Scroll only main content */
+  padding: 20px;
+}
+/* App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.dashboard {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.datepicker-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-bookings {
+  background-color: #3b82f6; /* Blue */
+}
+
+.stat-orders {
+  background-color: #10b981; /* Green */
+}
+
+.stat-revenue {
+  background-color: #facc15; /* Yellow */
+  color: #1f2937;
+}
+
+.stat-title {
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filter-container {
+  display: flex;
+  gap: 16px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-container label {
+  margin-right: 8px;
+}
+
+.filter-container select {
+  padding: 4px 8px;
+}
+
+.chart-container {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.loading-text {
+  text-align: center;
+  color: #666;
+}
+
+.dashboard-footer {
+  text-align: center;
+  margin-top: 48px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+
+.admin-bookings-container {
+  max-width: 1000px;
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.booking-stats {
+  background-color: #f1f5f9;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.bookings-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.status-badge {
+  padding: 0.4em 0.7em;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: white;
+}
+
+.status-badge.confirmed {
+  background-color: #22c55e;
+}
+
+.status-badge.pending {
+  background-color: #facc15;
+  color: #333;
+}
+
+.status-badge.canceled {
+  background-color: #ef4444;
+}
+
+.status-select {
+  padding: 0.4em 0.6em;
+  font-size: 0.95em;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.no-bookings {
+  color: #888;
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.admin-orders {
+  max-width: 1000px;
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.admin-orders h1{
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  margin-top: 2rem;
+}
+
+.admin-orders {
+  padding: 20px;
+  background: #f5f6fa;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+.orders-table {
+  width: 100%;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.orders-table thead {
+  background-color: #f1f3f6;
+}
+
+.orders-table th {
+  padding: 16px 18px;
+  font-weight: 600;
+  color: #444;
+  text-align: left;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.orders-table td {
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.orders-table tr:hover td {
+  background-color: #f9fbff;
+}
+
+.dish-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orders-table img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.status-pill.completed {
+  background: #e6f7e6;
+  color: #2b8a3e;
+}
+
+.status-pill.failed {
+  background: #fdecea;
+  color: #d93025;
+}
+
+.status-pill.pending {
+  background: #fff4e5;
+  color: #b36b00;
+}
+
+.orders-table .btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.orders-table .btn.complete {
+  background: #d4f5d4;
+  color: #1a7f1a;
+}
+
+.orders-table .btn.fail {
+  background: #fde0dc;
+  color: #b71c1c;
+}
+
+.orders-table .btn.delete {
+  background: #f5f5f5;
+  color: #555;
+}
+
+.orders-table .btn:hover {
+  filter: brightness(0.95);
+  transform: scale(1.05);
+}
+
+
+.dish-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.dish-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.meta-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+.order-details img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.order-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.4em 0.8em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn.complete {
+  background-color: #4ade80;
+  color: #fff;
+}
+
+.btn.fail {
+  background-color: #f87171;
+  color: #fff;
+}
+
+.btn.delete {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+.leaflet-container {
+  width : 100% !important;
+  height: 300px !important; /* optional to ensure min height */
+}
+/*event info page*/ 
+/* Main Container */
+.event-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* ---------- Event Info (simple layout) ---------- */
+.general-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.general-info h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.general-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+
+.general-image {
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ---------- Available Events (cards) ---------- */
+.event-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #f9f9f9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: background 0.3s ease;
+}
+
+.event-row.reverse {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .event-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .event-row.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.event-image {
+  width: 100%;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-text {
+  padding: 24px;
+  flex: 1;
+}
+
+.event-text h3 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.event-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Hover effect */
+.event-row:hover {
+  background: #f1f1f1;
+}
+
+
+
+

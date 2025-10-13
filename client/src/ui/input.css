@@ -1,0 +1,12 @@
+.ui_input{
+    padding: 0.6rem;
+    border: none;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s;
+    width: 100%;
+}
+.ui_input:hover {
+    border-color: rgb(33, 33, 240);;
+}

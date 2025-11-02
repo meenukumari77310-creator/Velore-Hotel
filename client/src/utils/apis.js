@@ -1,6 +1,10 @@
 export const apis = () => {
   const local = "http://localhost:5000/";
-  const prefix = `${local}foodie`;
+  const production = "https://velore-hotel.onrender.com/";
+
+  const base = import.meta.env.MODE === "development" ? local : production;
+  const prefix = `${base}foodie`;
+
 
   const list = {
     // ✅ User Auth

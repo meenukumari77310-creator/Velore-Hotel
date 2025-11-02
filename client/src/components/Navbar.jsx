@@ -98,7 +98,7 @@ const Navbar = () => {
       >
         <div className="container-fluid">
           {/* Logo */}
-          <Link className="navbar-brand d-flex align-items-center" to="/">
+          <Link className="navbar-brand d-flex align-items-center" to="/home">
             <span
               className="ms-2 fw-bold fs-2"
               style={{
@@ -139,7 +139,7 @@ const Navbar = () => {
               ].map((name, idx) => {
                 const path =
                   name.toLowerCase() === "home"
-                    ? "/"
+                    ? "/home"
                     : name === "Event Catering"
                     ? "/booking-info"
                     : name === "Book Room"

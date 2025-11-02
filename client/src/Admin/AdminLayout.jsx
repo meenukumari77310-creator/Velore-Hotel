@@ -7,7 +7,6 @@ import { apis } from "../utils/apis";
 const AdminLayout = () => {
   const navigate = useNavigate();
   const [loadingAll, setLoadingAll] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const [adminProfile, setAdminProfile] = useState({
@@ -15,10 +14,6 @@ const AdminLayout = () => {
     email: "",
     profileImage: null,
   });
-
-  useEffect(() => {
-    document.body.classList.toggle("dark-mode", darkMode);
-  }, [darkMode]);
 
   useEffect(() => {
     fetchAdminProfile();
@@ -138,15 +133,6 @@ const AdminLayout = () => {
           <hr className="bg-secondary" />
         </div>
 
-        {/* Theme Toggle */}
-        <div className="d-flex justify-content-center mb-3">
-          <button
-            className="btn btn-sm btn-outline-light"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-          </button>
-        </div>
 
         {/* Nav Links */}
         <nav className="nav flex-column">

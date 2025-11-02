@@ -39,7 +39,7 @@ const Login = () => {
 
       if (result?.status) {
         toast.success(result?.message);
-        navigate("/");
+        navigate("/home");
       }
 
     } catch (error) {

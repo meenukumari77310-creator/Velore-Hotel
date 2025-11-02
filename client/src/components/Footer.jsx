@@ -19,7 +19,7 @@ const Footer = () => (
           <h5 className="text-danger fw-bold mb-3">Quick Links</h5>
           <ul className="list-unstyled">
             {[
-              { name: 'Home', path: '/' },
+              { name: 'Home', path: '/home' },
               { name: 'Menu', path: '/menu' },
               { name: 'About Us', path: '/about' },
               { name: 'Contact Us', path: '/contact' },

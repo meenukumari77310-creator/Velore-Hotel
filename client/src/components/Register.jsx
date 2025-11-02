@@ -95,7 +95,7 @@ export const Register = () => {
       });
 
       toast.success(`Welcome ${user.displayName}`);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       toast.error("Google login failed: " + error.message);
     }

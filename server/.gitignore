@@ -1,11 +1,15 @@
-# Node.js dependencies
+# Node dependencies
 node_modules/
 
 # Environment variables
 .env
 
-# Build folders (React frontend)
-frontend/build/
-
 # Logs
 *.log
+
+# Frontend build folder (if served from backend)
+client/build/
+frontend/build/
+
+# OS files
+.DS_Store

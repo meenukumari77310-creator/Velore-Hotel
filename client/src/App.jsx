@@ -65,6 +65,7 @@ import AdminRoomDetail from "./Admin/AdminRoomDetails";
 import BookingForm from "./pages/BookingForm";
 import AdminRoomBookings from "./Admin/AdminRoomBookings";
 import AdminHeroSection from "./Admin/AdminHeroSection";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const [isOtpVerified, setisOtpVerified] = useState(false);
@@ -74,11 +75,11 @@ function App() {
     <UserProvider>
       <AdminUserProvider>
         <Routes>
-        
+        <Route path="/" element={<LandingPage />} />
           {/* User Routes */}
           <Route element={<Super />}>
             <Route element={<ProtectedLayout />}>
-              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/contact" element={<Contact />} />

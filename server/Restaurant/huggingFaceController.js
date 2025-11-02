@@ -3,7 +3,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const cohere = new CohereClient(); // Uses CO_API_KEY from env
+const cohere = new CohereClient({
+  apiKey: process.env.CO_API_KEY
+});
+
 
 export const generateText = async (req, res) => {
   try {

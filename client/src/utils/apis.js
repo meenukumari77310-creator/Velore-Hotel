@@ -2,8 +2,10 @@ export const apis = () => {
   const local = "http://localhost:5000/";
   const production = "https://velore-hotel.onrender.com/";
 
-  const base = import.meta.env.MODE === "development" ? local : production;
+  // ✅ Auto detect environment without import.meta
+  const base = window.location.hostname === "localhost" ? local : production;
   const prefix = `${base}foodie`;
+
 
 
   const list = {
@@ -182,9 +184,9 @@ export const apis = () => {
     deleteRoomBooking: (id) => `${prefix}/admin/room-booking/${id}`,
 
     getHeroSection: `${prefix}/hero-section`,
-    addHeroSection:`${prefix}/admin/hero-section`,
-    updateHeroSection:`${prefix}/admin/hero-section`,
-    deleteHeroSection:`${prefix}/admin/hero-section`,
+    addHeroSection: `${prefix}/admin/hero-section`,
+    updateHeroSection: `${prefix}/admin/hero-section`,
+    deleteHeroSection: `${prefix}/admin/hero-section`,
 
     usergetHeroSection: `${prefix}/user/hero-section`,
 

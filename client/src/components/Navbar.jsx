@@ -64,11 +64,11 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/foodie/logout", {
+      await fetch("https://velore-hotel.onrender.com/foodie/logout", {
         method: "POST",
         credentials: "include",
       });
-      window.location.href = "/login";
+      navigate("/login");
     } catch (err) {
       console.error("Logout error", err);
     }
@@ -141,19 +141,18 @@ const Navbar = () => {
                   name.toLowerCase() === "home"
                     ? "/home"
                     : name === "Event Catering"
-                    ? "/booking-info"
-                    : name === "Book Room"
-                    ? "/room-booking"
-                    : `/${name.toLowerCase().replace(" ", "-")}`;
+                      ? "/booking-info"
+                      : name === "Book Room"
+                        ? "/room-booking"
+                        : `/${name.toLowerCase().replace(" ", "-")}`;
                 return (
                   <li className="nav-item" key={idx}>
                     <NavLink
                       to={path}
                       className={({ isActive }) =>
-                        `nav-link mx-2 px-3 py-2 rounded-pill fw-semibold ${
-                          isActive
-                            ? "bg-danger text-white shadow-sm"
-                            : "text-light"
+                        `nav-link mx-2 px-3 py-2 rounded-pill fw-semibold ${isActive
+                          ? "bg-danger text-white shadow-sm"
+                          : "text-light"
                         }`
                       }
                     >
@@ -240,10 +239,10 @@ const Navbar = () => {
                   profileImage
                     ? profileImage
                     : userData.email
-                    ? `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
+                      ? `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(
                         userData.email
                       )}`
-                    : "https://via.placeholder.com/120?text=No+Img"
+                      : "https://via.placeholder.com/120?text=No+Img"
                 }
                 alt="Profile"
                 className="rounded-circle border"

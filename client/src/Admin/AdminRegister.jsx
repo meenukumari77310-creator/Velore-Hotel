@@ -27,7 +27,7 @@ export const AdminRegister = () => {
   const { setUserDetails } = useUser();
 
   const actionCodeSettings = {
-  url: `http://localhost:3000/AdminFinishSignIn?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
+    url: `https://velore-hotel-client.onrender.com/#/AdminFinishSignIn?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
     handleCodeInApp: true,
   };
 
@@ -62,20 +62,20 @@ export const AdminRegister = () => {
     }
   };
 
- const sendMagicLink = async () => {
-  if (!email || !name)
-    return toast.error("Please enter your name and email first");
+  const sendMagicLink = async () => {
+    if (!email || !name)
+      return toast.error("Please enter your name and email first");
 
-  try {
-    await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+    try {
+      await sendSignInLinkToEmail(auth, email, actionCodeSettings);
 
-    setUserDetails({ email, name }); // ✅ Use the hook from top scope
+      setUserDetails({ email, name }); // ✅ Use the hook from top scope
 
-    toast.success("Magic link sent! Check your email.");
-  } catch (error) {
-    toast.error("Failed to send magic link: " + error.message);
-  }
-};
+      toast.success("Magic link sent! Check your email.");
+    } catch (error) {
+      toast.error("Failed to send magic link: " + error.message);
+    }
+  };
 
 
 

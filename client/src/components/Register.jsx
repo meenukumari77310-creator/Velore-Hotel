@@ -27,7 +27,7 @@ export const Register = () => {
   const { setUserDetails } = useUser();
 
   const actionCodeSettings = {
-  url: `http://localhost:3000/finishSignIn?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
+    url: `https://velore-hotel-client.onrender.com/#/finishSignIn?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
     handleCodeInApp: true,
   };
 
@@ -62,20 +62,20 @@ export const Register = () => {
     }
   };
 
- const sendMagicLink = async () => {
-  if (!email || !name)
-    return toast.error("Please enter your name and email first");
+  const sendMagicLink = async () => {
+    if (!email || !name)
+      return toast.error("Please enter your name and email first");
 
-  try {
-    await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+    try {
+      await sendSignInLinkToEmail(auth, email, actionCodeSettings);
 
-    setUserDetails({ email, name }); // ✅ Use the hook from top scope
+      setUserDetails({ email, name }); // ✅ Use the hook from top scope
 
-    toast.success("Magic link sent! Check your email.");
-  } catch (error) {
-    toast.error("Failed to send magic link: " + error.message);
-  }
-};
+      toast.success("Magic link sent! Check your email.");
+    } catch (error) {
+      toast.error("Failed to send magic link: " + error.message);
+    }
+  };
 
 
 
@@ -170,12 +170,12 @@ export const Register = () => {
             {/* Magic Link Section */}
             <div className="mb-3">
               <button className="btn btn-outline-primary w-100 mb-2" onClick={sendMagicLink}>
-               <FaMagic className="me-2" /> Send Magic Link
+                <FaMagic className="me-2" /> Send Magic Link
               </button>
 
               {/* Google Sign-in */}
               <button className="btn btn-outline-danger w-100" onClick={handleGoogleLogin}>
-               <FaGoogle className="me-2" /> Sign in with Google
+                <FaGoogle className="me-2" /> Sign in with Google
               </button>
             </div>
 

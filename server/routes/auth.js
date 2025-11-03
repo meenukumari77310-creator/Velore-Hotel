@@ -179,7 +179,7 @@ import { generateText } from "../Restaurant/huggingFaceController.js";
 
 const router = express.Router();
 
-router.post("/loginviafirebase",  loginViaFirebase);
+router.post("/loginviafirebase", loginViaFirebase);
 router.post("/save_password_magic_link", savePasswordMagicLink);
 router.post("/register", register);
 router.post("/login", login);
@@ -405,8 +405,8 @@ router.post("/payment", auth, createCheckoutSession);
 router.post("/contact", auth, contact);
 
 router.get("/admin/book-room", adminAuth, getRooms);
-router.post("/admin/book-room",adminAuth, uploadRoomImage.single("coverImage"), addRoom);
-router.put("/admin/book-room/:id",adminAuth,uploadRoomImage.single("coverImage"),updateRoom);
+router.post("/admin/book-room", adminAuth, uploadRoomImage.single("coverImage"), addRoom);
+router.put("/admin/book-room/:id", adminAuth, uploadRoomImage.single("coverImage"), updateRoom);
 router.delete("/admin/book-room/:id", adminAuth, deleteRoom);
 
 router.get("/user/book-room/:slug", auth, getRoomBySlug);
@@ -418,7 +418,7 @@ router.put("/admin/room-detail/detail/:detailId", adminAuth, uploadRoomImage.arr
 router.delete("/admin/room-detail/detail/:detailId", adminAuth, deleteRoomDetail);
 
 
-router.put("/remove-image",adminAuth, removeRoomImage);
+router.put("/remove-image", adminAuth, removeRoomImage);
 
 
 router.get("/user/hero-section", auth, getHeroSection);
@@ -427,7 +427,7 @@ router.get("/hero-section", adminAuth, getHeroSection);
 // routes/auth.js
 
 // POST route (must be POST, not GET)
-router.post("/cohere",auth, generateText);
+router.post("/cohere", auth, generateText);
 
 
 // Admin routes to manage hero section
@@ -477,11 +477,15 @@ router.delete("/bookings/:id", adminAuth, deleteBooking);
 router.get("/availability", auth, getAvailability);
 
 router.post("/logout", auth, (req, res) => {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
+    sameSite: isProduction ? "None" : "Lax",
+    path: "/",
   });
+
   res.status(200).json({ message: "Logged out successfully" });
 });
 
@@ -501,11 +505,15 @@ router.get("/admin/user", adminAuth, AdmingetUserInfo);
 router.post("/admin/logout-all", adminAuth, AdminlogoutAllDevices);
 
 router.post("/admin/logout", adminAuth, (req, res) => {
+  const isProduction = process.env.NODE_ENV === "production";
+
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "Lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: isProduction,
+    sameSite: isProduction ? "None" : "Lax",
+    path: "/",
   });
+
   res.status(200).json({ message: "Logged out successfully" });
 });
 

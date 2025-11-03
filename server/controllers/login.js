@@ -35,13 +35,16 @@ export const login = async (req, res, next) => {
       tokenVersion: findUser.tokenVersion,
     }, process.env.ACCESS_TOKEN_KEY, { expiresIn: "7d" });
 
+    const isProduction = process.env.NODE_ENV === "production";
+
     res.cookie("token", accessToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
+      secure: isProduction,                       // ✅ true on Render
+      sameSite: isProduction ? "None" : "Lax",    // ✅ required for cross-domain cookies
       maxAge: 7 * 24 * 60 * 60 * 1000,
       path: "/",
     });
+
 
     res.status(200).json({
       message: "Login successful",

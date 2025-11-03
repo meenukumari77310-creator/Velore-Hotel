@@ -8,12 +8,15 @@ export const logoutAllDevices = async (req, res) => {
     await User.findByIdAndUpdate(userId, { $inc: { tokenVersion: 1 } });
 
     // Optionally clear cookie on this device
+    const isProduction = process.env.NODE_ENV === "production";
+
     res.clearCookie("token", {
       httpOnly: true,
-      sameSite: "Lax",
-      secure: process.env.NODE_ENV === "production",
-      path: "/login"
+      secure: isProduction,                      // ✅ needed for Render
+      sameSite: isProduction ? "None" : "Lax",   // ✅ required for cross-site cookie removal
+      path: "/",                                 // ✅ clear cookie from root, not /login
     });
+
 
     res.status(200).json({ message: "Logged out from all devices" });
   } catch (error) {

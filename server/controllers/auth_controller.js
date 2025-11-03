@@ -34,12 +34,16 @@ export const loginViaFirebase = async (req, res, next) => {
     );
 
     // Set cookie with token
+    const isProduction = process.env.NODE_ENV === "production";
+
     res.cookie("token", accessToken, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Lax",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      secure: isProduction,                         // ✅ true on Render
+      sameSite: isProduction ? "None" : "Lax",      // ✅ allow cookie in cross-domain
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+      path: "/",
     });
+
 
     return res.status(200).json({
       status: true,
